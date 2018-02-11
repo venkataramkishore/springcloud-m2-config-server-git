@@ -1,0 +1,26 @@
+server:
+  port: 8881
+security:
+  basic:
+    enabled: true
+  user:
+    name: training
+    password: training
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/venkataramkishore/spring-cloudconfig-server
+          #username: username
+          #password: password
+          search-paths:
+          - station*
+          repos:
+            perf:
+              pattern:
+                - "*/perf"
+              uri: https://github.com/venkataramkishore/spring-cloudconfig-perf
+              search-paths:
+                - station*
+              
